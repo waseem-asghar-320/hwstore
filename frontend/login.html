@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login — HW Store</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-bar__content">
+        <span>300% advance payment for order confirmation</span>
+        <span aria-hidden="true">•</span>
+        <span>300% advance payment for order confirmation</span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo"
+          ><img src="images/logo.png" alt="HW Store logo" /><span
+            >HW Store</span
+          ></a
+        >
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="login-section">
+      <div class="container">
+        <div class="auth-card">
+          <div class="auth-icon">🔐</div>
+          <h1>Admin Access</h1>
+          <p>Enter your credentials to manage the collection.</p>
+          <form id="loginForm" method="get" action="/admin.html">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="password-input">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Toggle password visibility"
+                >
+                  👁
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Access Panel
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2026 HW Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const passwordInput = document.getElementById("password");
+        const toggleButton = document.querySelector(".password-toggle");
+        if (passwordInput && toggleButton) {
+          toggleButton.addEventListener("click", () => {
+            const isHidden = passwordInput.type === "password";
+            passwordInput.type = isHidden ? "text" : "password";
+            toggleButton.textContent = isHidden ? "🙈" : "👁";
+            toggleButton.setAttribute(
+              "aria-label",
+              isHidden ? "Hide password" : "Show password",
+            );
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

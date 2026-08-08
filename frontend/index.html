@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW Store — Premium Watches</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-bar__content">
+        <span>300% advance payment for order confirmation</span>
+        <span aria-hidden="true">•</span>
+        <span>300% advance payment for order confirmation</span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo"
+          ><img src="images/logo.png" alt="HW Store logo" /><span
+            >HW Store</span
+          ></a
+        >
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#products">Collection</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <!-- Hero Slider - Desktop (5 images) -->
+      <div class="hero-slider desktop-slider" id="desktopSlider">
+        <div class="hero-slide" style="background-image: url('images/bg-with-heros.png');"></div>
+        <div class="hero-slide active" style="background-image: url('images/bg1.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/bg2.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/bg3.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/bg4.png');"></div>
+      </div>
+
+      <!-- Hero Slider - Mobile (4 images) -->
+      <div class="hero-slider mobile-slider" id="mobileSlider">
+        <div class="hero-slide" style="background-image: url('images/bg-with-heros-ph.png');"></div>
+        <div class="hero-slide active" style="background-image: url('images/bg-ph1.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/bg-ph2.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/bg-ph4.png');"></div>
+      </div>
+
+      <!-- Overlay - REMOVED the black overlay -->
+      <!-- <div class="hero-overlay"></div> -->
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">Explore Collection</a>
+            <a href="#about" class="btn btn-outline">Our Story</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <button class="slider-control prev" aria-label="Previous slide">‹</button>
+      <button class="slider-control next" aria-label="Next slide">›</button>
+
+      <!-- Slider Indicators - Desktop -->
+      <div class="slider-indicators desktop-indicators" id="desktopIndicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+        <span class="indicator" data-slide="3"></span>
+        <span class="indicator" data-slide="4"></span>
+      </div>
+
+      <!-- Slider Indicators - Mobile -->
+      <div class="slider-indicators mobile-indicators" id="mobileIndicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+        <span class="indicator" data-slide="3"></span>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-label">Our Curated Selection</span>
+            <h2>Timeless <span>Collection</span></h2>
+          </div>
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search timepieces..."
+              aria-label="Search watches"
+            />
+          </div>
+        </div>
+        <div id="productsGrid" class="products-grid">
+          <div class="loading-spinner"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-shell">
+        <div class="about-hero about-reveal">
+          <span class="section-label">About Us</span>
+          <h2>ABOUT <span>HW STORE</span></h2>
+          <p class="about-subtitle">
+            Crafting Timeless Elegance for Every Wrist
+          </p>
+          <div class="about-copy">
+            <p>
+              HW Store brings together premium watches, trusted quality, and
+              refined craftsmanship for collectors and first-time buyers alike.
+            </p>
+            <p>
+              Every piece is carefully sourced to ensure genuine products, fast
+              shipping, and a seamless buying experience from start to finish.
+            </p>
+            <p>
+              We believe luxury should feel accessible, which is why we combine
+              affordable prices with exceptional customer service and reliable
+              support.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-counters about-reveal" id="aboutCounters">
+          <div class="about-counter-card">
+            <div class="counter-icon">😊</div>
+            <div class="counter-number" data-target="1500" data-suffix="+">
+              0
+            </div>
+            <span class="counter-label">Happy Customers</span>
+          </div>
+          <div class="about-counter-card">
+            <div class="counter-icon">📦</div>
+            <div class="counter-number" data-target="2500" data-suffix="+">
+              0
+            </div>
+            <span class="counter-label">Products Delivered</span>
+          </div>
+          <div class="about-counter-card">
+            <div class="counter-icon">🌍</div>
+            <div class="counter-number" data-target="25" data-suffix="+">0</div>
+            <span class="counter-label">Cities Served</span>
+          </div>
+          <div class="about-counter-card">
+            <div class="counter-icon">⭐</div>
+            <div class="counter-number" data-target="99" data-suffix="%">0</div>
+            <span class="counter-label">Customer Satisfaction</span>
+          </div>
+        </div>
+
+        <div class="about-compare about-reveal">
+          <h3>Why Choose HW Store?</h3>
+          <div class="table-scroll">
+            <table class="about-comparison-table">
+              <thead>
+                <tr>
+                  <th>HW Store</th>
+                  <th>Other Stores</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>✔ 100% Genuine Watches</td>
+                  <td>Mixed Quality</td>
+                </tr>
+                <tr>
+                  <td>✔ Fast Shipping</td>
+                  <td>Slow Delivery</td>
+                </tr>
+                <tr>
+                  <td>✔ Premium Customer Support</td>
+                  <td>Limited Support</td>
+                </tr>
+                <tr>
+                  <td>✔ Secure Payment</td>
+                  <td>Basic Payment</td>
+                </tr>
+                <tr>
+                  <td>✔ Affordable Luxury Prices</td>
+                  <td>Higher Prices</td>
+                </tr>
+                <tr>
+                  <td>✔ Easy Returns</td>
+                  <td>Complicated Returns</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="feature-marquee about-reveal" aria-label="Store highlights">
+          <div class="feature-marquee-track">
+            <span class="feature-pill"
+              ><span class="feature-icon">🚚</span>Fast Shipping</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🎁</span>Free Delivery</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🛡</span>100% Genuine</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">💳</span>Secure Payment</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🔄</span>Easy Returns</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">⭐</span>Premium Quality</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🎧</span>24/7 Support</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">⌚</span>Luxury Watches</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🚚</span>Fast Shipping</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🎁</span>Free Delivery</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🛡</span>100% Genuine</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">💳</span>Secure Payment</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🔄</span>Easy Returns</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">⭐</span>Premium Quality</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">🎧</span>24/7 Support</span
+            >
+            <span class="feature-pill"
+              ><span class="feature-icon">⌚</span>Luxury Watches</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="index.html" class="logo"
+              ><img src="images/logo.png" alt="HW Store logo" /><span
+                >HW Store</span
+              ></a
+            >
+            <p>Luxury timepieces for the discerning collector.</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <a href="#products">Collection</a>
+            <a href="#about">About</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="#">hello@hwstore.com</a>
+            <a href="#">+41 22 555 0199</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 HW Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/config.js?v=2"></script>
+    <script src="js/products.js?v=2"></script>
+  </body>
+</html>

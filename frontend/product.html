@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details — HW Store</title>
+    <link rel="stylesheet" href="css/product.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-bar__content">
+        <span>300% advance payment for order confirmation</span>
+        <span aria-hidden="true">•</span>
+        <span>300% advance payment for order confirmation</span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo"
+          ><img src="images/logo.png" alt="HW Store logo" /><span
+            >HW Store</span
+          ></a
+        >
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#products">Collection</a></li>
+          <li><a href="index.html#about">About</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="product-detail-section">
+      <div class="container">
+        <a href="index.html" class="back-link">← Back to Collection</a>
+        <div id="productDetail" class="product-detail">
+          <div class="loading-spinner"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="orderModal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-icon">📋</div>
+        <h2>Place Your Order</h2>
+        <p class="modal-subtitle">
+          Complete the details below to secure this timepiece.
+        </p>
+        <form id="orderForm">
+          <div class="form-group">
+            <label for="customerName">Full Name *</label>
+            <input
+              type="text"
+              id="customerName"
+              name="customerName"
+              placeholder="e.g., James Bond"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="customerPhone">Phone Number *</label>
+            <input
+              type="tel"
+              id="customerPhone"
+              name="customerPhone"
+              placeholder="+41 78 123 4567"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="customerAddress">Delivery Address *</label>
+            <textarea
+              id="customerAddress"
+              name="customerAddress"
+              rows="3"
+              placeholder="Street, City, Postal Code"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="orderQuantity">Quantity</label>
+            <input
+              type="number"
+              id="orderQuantity"
+              name="orderQuantity"
+              min="1"
+              max="10"
+              value="1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="orderNotes">Special Notes</label>
+            <textarea
+              id="orderNotes"
+              name="orderNotes"
+              rows="2"
+              placeholder="Any special requests..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Confirm Order
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-icon">✅</div>
+        <h2>Order Confirmed</h2>
+        <p class="modal-subtitle">Your timepiece has been reserved.</p>
+        <div id="orderSuccessDetails"></div>
+        <button
+          class="btn btn-primary btn-full"
+          onclick="window.location.href = 'index.html'"
+        >
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2026 HW Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/config.js?v=2"></script>
+    <script src="js/product-detail.js?v=2"></script>
+  </body>
+</html>

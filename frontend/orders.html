@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Management — HW Store</title>
+    <link rel="stylesheet" href="css/orders.css?v=3"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-bar__content">
+        <span>300% advance payment for order confirmation</span>
+        <span aria-hidden="true">•</span>
+        <span>300% advance payment for order confirmation</span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo"
+          ><img src="images/logo.png" alt="HW Store logo" /><span
+            >HW Store</span
+          ></a
+        >
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="orders.html" class="active">Orders</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="orders-section">
+      <div class="container">
+        <div class="orders-header">
+          <div>
+            <span class="section-label">Order Management</span>
+            <h1>Client <span>Orders</span></h1>
+            <p>Track and manage all incoming timepiece orders.</p>
+          </div>
+          <div class="orders-stats">
+            <div class="stat-card">
+              <span class="stat-number" id="totalOrders">0</span>
+              <span class="stat-label">Total Orders</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" id="pendingOrders">0</span>
+              <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" id="completedOrders">0</span>
+              <span class="stat-label">Completed</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="ordersContainer">
+          <div class="loading-spinner"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2026 HW Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/config.js?v=2"></script>
+    <script src="js/orders.js?v=3"></script>
+  </body>
+</html>

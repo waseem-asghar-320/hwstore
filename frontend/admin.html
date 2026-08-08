@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel — HW Store</title>
+    <link rel="stylesheet" href="css/admin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-bar__content">
+        <span>300% advance payment for order confirmation</span>
+        <span aria-hidden="true">•</span>
+        <span>300% advance payment for order confirmation</span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo"
+          ><img src="images/logo.png" alt="HW Store logo" /><span
+            >HW Store</span
+          ></a
+        >
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="admin.html" class="active">Admin</a></li>
+          <li><a href="orders.html">Orders</a></li>
+          
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="admin-section">
+      <div class="container">
+        <div class="admin-header">
+          <h1>Administration</h1>
+          <p>Manage your timepiece collection with precision.</p>
+        </div>
+        <div class="admin-grid">
+          <div class="admin-form-card">
+            <h2 id="formTitle">Add New Timepiece</h2>
+            <form id="productForm" enctype="multipart/form-data">
+              <input type="hidden" id="productId" />
+              <div class="form-group">
+                <label for="name">Model Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="e.g., Navitimer B01"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="brand">Brand *</label>
+                  <input
+                    type="text"
+                    id="brand"
+                    name="brand"
+                    placeholder="e.g., Breitling"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="category">Category *</label>
+                  <input
+                    type="text"
+                    id="category"
+                    name="category"
+                    placeholder="e.g., Chronograph"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="price">Original Price (Rs.) *</label>
+                  <input
+                    type="number"
+                    id="price"
+                    name="price"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="discountPrice">Sale Price (Rs.)</label>
+                  <input
+                    type="number"
+                    id="discountPrice"
+                    name="discountPrice"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="stock">Availability</label>
+                  <input
+                    type="number"
+                    id="stock"
+                    name="stock"
+                    min="0"
+                    value="1"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">Description *</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="4"
+                  placeholder="Describe the timepiece..."
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label>Product Images *</label>
+                <div id="imageDropZone" class="image-drop-zone">
+                  <div class="drop-zone-icon">📸</div>
+                  <p>Drop images here or click to browse</p>
+                  <small id="imagesHint" class="form-hint"
+                    >JPG, PNG, WEBP — up to 20 images, 5MB each</small
+                  >
+                </div>
+                <input
+                  type="file"
+                  id="images"
+                  name="images"
+                  accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
+                  multiple
+                  required
+                  hidden
+                />
+                <div
+                  id="existingImagesPreview"
+                  class="image-preview-grid"
+                ></div>
+                <div id="newImagePreview" class="image-preview-grid"></div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                  Add Timepiece
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="cancelBtn"
+                  style="display: none"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="admin-list-card">
+            <h2>Current Collection</h2>
+            <div id="adminProductsList">
+              <div class="loading-spinner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2026 HW Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/config.js?v=2"></script>
+    <script src="js/admin.js?v=3"></script>
+  </body>
+</html>

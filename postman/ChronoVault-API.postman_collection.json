@@ -1,0 +1,113 @@
+{
+  "info": {
+    "name": "HW Store API",
+    "description": "REST API collection for Premium Watch Store",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api"
+    }
+  ],
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products"
+          }
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/products/:id",
+            "variable": [{ "key": "id", "value": "PRODUCT_ID_HERE" }]
+          }
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Rolex Submariner\",\n  \"brand\": \"Rolex\",\n  \"category\": \"Diver\",\n  \"price\": 450000,\n  \"description\": \"Iconic diving watch with automatic movement.\",\n  \"images\": [\"https://via.placeholder.com/600x600/111111/888888?text=Rolex\"],\n  \"stock\": 5\n}"
+            },
+            "url": "{{baseUrl}}/products"
+          }
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Rolex Submariner Updated\",\n  \"price\": 460000,\n  \"stock\": 3\n}"
+            },
+            "url": "{{baseUrl}}/products/:id",
+            "variable": [{ "key": "id", "value": "PRODUCT_ID_HERE" }]
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/products/:id",
+            "variable": [{ "key": "id", "value": "PRODUCT_ID_HERE" }]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orders"
+          }
+        },
+        {
+          "name": "Create Order (COD)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": \"PRODUCT_ID_HERE\",\n  \"customerName\": \"John Doe\",\n  \"customerPhone\": \"03001234567\",\n  \"customerAddress\": \"123 Main Street, Karachi\",\n  \"quantity\": 1,\n  \"notes\": \"Please deliver after 5 PM\"\n}"
+            },
+            "url": "{{baseUrl}}/orders"
+          }
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Processing\"\n}"
+            },
+            "url": "{{baseUrl}}/orders/:id/status",
+            "variable": [{ "key": "id", "value": "ORDER_ID_HERE" }]
+          }
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orders/:id",
+            "variable": [{ "key": "id", "value": "ORDER_ID_HERE" }]
+          }
+        }
+      ]
+    }
+  ]
+}
