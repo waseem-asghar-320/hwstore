@@ -2,6 +2,7 @@ if (!process.env.VERCEL) {
   require('dotenv').config();
 }
 
+const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
@@ -11,6 +12,7 @@ const multer = require('multer');
 console.log('🚀 Initializing watch store backend...');
 
 const frontendPath = path.resolve(__dirname, '..', 'frontend');
+const uploadsPath = path.resolve(__dirname, 'uploads');
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -102,6 +104,11 @@ function createApp() {
     res.sendFile(path.join(frontendPath, 'orders.html'));
   });
 
+  if (!fs.existsSync(uploadsPath)) {
+    fs.mkdirSync(uploadsPath, { recursive: true });
+  }
+
+  app.use('/uploads', express.static(uploadsPath));
   app.use(express.static(frontendPath));
 
   app.get('/', (req, res) => {

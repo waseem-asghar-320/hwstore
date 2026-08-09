@@ -152,16 +152,24 @@ async function fetchAdminProducts() {
 
   try {
     const response = await fetch(`${API_BASE_URL}/products`);
-    const result = await response.json();
+    const contentType = response.headers.get('content-type') || '';
+    const result = contentType.includes('application/json')
+      ? await response.json()
+      : null;
 
-    if (!response.ok) {
-      throw new Error(result.message || 'Failed to fetch products');
+    if (!response.ok || (result && result.success === false)) {
+      const message = result?.message || response.statusText || 'Failed to fetch products';
+      throw new Error(message);
     }
 
-    renderAdminProducts(result.data || []);
+    renderAdminProducts(result?.data || []);
   } catch (error) {
     list.innerHTML = `<p class="error-message">${escapeHtml(error.message)}</p>`;
     showToast(error.message, 'error');
+  } finally {
+    if (!list.innerHTML.trim()) {
+      list.innerHTML = '<p class="error-message">Unable to load products. Please refresh the page.</p>';
+    }
   }
 }
 
